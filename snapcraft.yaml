@@ -1,7 +1,7 @@
 name: tpad
 title: Tpad
 base: core26
-version: '7.1.0.0'
+version: '7.2.0.0'
 summary: Simple text editor
 description: |
   A simple, easy to use, fast text editor.
