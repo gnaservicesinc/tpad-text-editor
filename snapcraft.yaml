@@ -1,7 +1,7 @@
-name: tpad
+name: tpad-text-editor
 title: Tpad
 base: core26
-version: '7.2.0.0'
+version: '7.2.0.1'
 summary: Simple text editor
 description: |
   A simple, easy to use, fast text editor.
@@ -11,12 +11,21 @@ source-code: https://git.launchpad.net/tpad-project
 issues: https://bugs.launchpad.net/tpad-project
 contact: https://bugs.launchpad.net/tpad-project
 license: GPL-3.0+
-icon: icon/tpad_128.png
+icon: usr/share/icons/tpad.png
 
 grade: stable
 confinement: strict
 assumes:
   - snapd2.55
+
+# The CUPS snap currently publishes only for these architectures. The
+# default-provider below is installed during Snapcraft's pull step, so builds
+# for ppc64el and s390x cannot succeed until CUPS publishes those variants.
+platforms:
+  amd64:
+  arm64:
+  armhf:
+  riscv64:
 
 # The cups content plug causes the print service to be installed when needed.
 # It complements the safe, auto-connected cups interface used by the app.
@@ -63,7 +72,8 @@ parts:
 
   tpad:
     plugin: autotools
-    source: .
+    source: https://git.launchpad.net/tpad-project
+    source-type: git
     autotools-configure-parameters:
       - --prefix=/usr
     build-packages:
