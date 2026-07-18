@@ -40,8 +40,14 @@ parts:
     autotools-configure-parameters:
       - --prefix=/usr
     build-packages:
+      - autoconf
+      - automake
       - intltool
       - libgtkspell3-3-dev
       - libgtksourceview-3.0-dev
+      - libtool
+    override-build: |
+      autoreconf --force --install
+      craftctl default
     stage-packages:
       - libgtkspell3-3-0
