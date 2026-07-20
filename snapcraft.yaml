@@ -1,7 +1,7 @@
 name: tpad-text-editor
 title: Tpad
 base: core24
-version: '7.2.0.2'
+version: '7.3.0.0'
 summary: Simple text editor
 description: |
   A simple, easy to use, fast text editor.
@@ -42,11 +42,13 @@ parts:
       - autoconf
       - automake
       - intltool
-      - libgtkspell3-3-dev
-      - libgtksourceview-3.0-dev
+      - libgtk-4-dev
+      - libgtksourceview-5-dev
+      - libspelling-1-dev
       - libtool
     override-build: |
       autoreconf --force --install
       craftctl default
     stage-packages:
-      - libgtkspell3-3-0
+      - libgtksourceview-5-0
+      - libspelling-1-1
