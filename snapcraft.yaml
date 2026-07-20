@@ -1,7 +1,7 @@
 name: tpad-text-editor
 title: Tpad
 base: core24
-version: '7.2.0.1'
+version: '7.2.0.2'
 summary: Simple text editor
 description: |
   A simple, easy to use, fast text editor.
@@ -11,7 +11,7 @@ source-code: https://git.launchpad.net/tpad-project
 issues: https://bugs.launchpad.net/tpad-project
 contact: https://bugs.launchpad.net/tpad-project
 license: GPL-3.0+
-icon: usr/share/icons/tpad.png
+icon: icon/tpad_128.png
 
 grade: stable
 confinement: strict
@@ -35,8 +35,7 @@ apps:
 parts:
   tpad:
     plugin: autotools
-    source: https://git.launchpad.net/tpad-project
-    source-type: git
+    source: .
     autotools-configure-parameters:
       - --prefix=/usr
     build-packages:
