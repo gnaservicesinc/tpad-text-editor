@@ -1,7 +1,7 @@
 name: tpad-text-editor
 title: Tpad
 base: core24
-version: '7.3.0.1'
+version: '7.3.0.2'
 summary: Simple text editor
 description: |
   A simple, easy to use, fast text editor.
@@ -25,16 +25,6 @@ platforms:
 layout:
   /usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/enchant-2:
     bind: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/enchant-2
-  /usr/share/enchant-2:
-    bind: $SNAP/usr/share/enchant-2
-  /usr/share/hunspell:
-    bind: $SNAP/usr/share/hunspell
-
-slots:
-  tpad-dbus:
-    interface: dbus
-    bus: session
-    name: com.gnaservicesinc.tpad
 
 apps:
   tpad:
@@ -45,8 +35,6 @@ apps:
     plugs:
       - cups
       - home
-    slots:
-      - tpad-dbus
 
 parts:
   tpad:
