@@ -1,7 +1,7 @@
 name: tpad-text-editor
 title: Tpad
 base: core24
-version: '7.3.0.2'
+version: '7.3.0.3'
 summary: Simple text editor
 description: |
   A simple, easy to use, fast text editor.
@@ -32,6 +32,9 @@ apps:
     desktop: usr/share/applications/tpad.desktop
     extensions:
       - gnome
+    # The application uses G_APPLICATION_NON_UNIQUE and does not own a
+    # well-known D-Bus name. Declaring a D-Bus slot here is unnecessary and
+    # forces Snap Store manual review.
     plugs:
       - cups
       - home
